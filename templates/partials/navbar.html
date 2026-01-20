@@ -1,0 +1,38 @@
+{% load static %}
+<!-- Navbar -->
+<header class="navbar">
+  <div class="container wrap">
+
+    <!-- Brand -->
+    <a class="brand" href="{% url 'home' %}">
+      <div class="logo">
+        {% if site and site.logo %}
+          <img src="{{ site.logo.url }}" alt="{{ site.company_name }}">
+        {% else %}
+          <img src="{% static 'images/logo.jpg' %}" alt="Logo">
+        {% endif %}
+      </div>
+
+      <div>
+        <strong>{{ site.company_name|default:"Fine Diamond Education Foundation" }}</strong>
+        <span>{{ site.tagline|default:"Pvt. Ltd. • Kathmandu, Nepal" }}</span>
+      </div>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="navlinks" aria-label="Primary Navigation">
+      <a href="{% url 'home' %}">Home</a>
+      <a href="{% url 'about' %}">About Us</a>
+      <a href="{% url 'services' %}">Services</a>
+      <a href="{% url 'gallery' %}">Gallery</a>
+      <a href="{% url 'blog' %}">Blog</a>
+      <a href="{% url 'contact' %}">Contact</a>
+    </nav>
+
+    <!-- Actions -->
+    <div class="nav-actions">
+      <button class="hamburger" type="button" aria-label="Open menu">☰</button>
+    </div>
+
+  </div>
+</header>

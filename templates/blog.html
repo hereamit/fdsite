@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block title %} Blog | Fine Diamond {% endblock  %}
+
+{% block content %}
+
+  <section class="pagehead">
+    <div class="container">
+      <div class="breadcrumb">Home / Blog</div>
+      <h1>Blog & Resources</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Latest Articles</h2>
+        <p>Short, practical posts to help you prepare for tests, documents, and interviews.</p>
+      </div>
+
+      <div class="grid grid-3">
+        <article class="card blog-card">
+          <div class="cover">
+            <img src="assets/images/blog-1.jpg" alt="Blog cover">
+          </div>
+          <div class="meta">
+            <span class="tag">IELTS</span>
+            <span>•</span>
+            <span>10 min read</span>
+          </div>
+          <h3>IELTS Speaking: 7 Ways to Sound Confident</h3>
+          <p>Simple practice methods to reduce hesitation and speak smoothly with structure.</p>
+          <a class="readmore" href="contact.html">Get coaching <span class="arrow">→</span></a>
+        </article>
+
+        <article class="card blog-card">
+          <div class="cover">
+            <img src="img/celebration.jpg" alt="Blog cover">
+          </div>
+          <div class="meta">
+            <span class="tag">Documents</span>
+            <span>•</span>
+            <span>8 min read</span>
+          </div>
+          <h3>Document Checklist: What Most Students Forget</h3>
+          <p>Common missing items and how to keep your application clean and complete.</p>
+          <a class="readmore" href="services.html">Document support <span class="arrow">→</span></a>
+        </article>
+
+        <article class="card blog-card">
+          <div class="cover">
+            <img src="img/orientation.jpg" alt="Blog cover">
+          </div>
+          <div class="meta">
+            <span class="tag">Study Abroad</span>
+            <span>•</span>
+            <span>12 min read</span>
+          </div>
+          <h3>How to Choose the Right Country for You</h3>
+          <p>Match budget, course, future plan, and timeline—then decide confidently.</p>
+          <a class="readmore" href="services.html">Counseling <span class="arrow">→</span></a>
+        </article>
+      </div>
+
+      <div style="height:18px"></div>
+
+      <div class="card">
+        <div class="section-title">
+          <h2>Want a Topic Covered?</h2>
+          <p>Tell us what you want to learn and we’ll publish a helpful guide.</p>
+        </div>
+
+        <form class="form" onsubmit="event.preventDefault(); alert('✅ Thanks! (Front-end demo)');">
+          <div class="grid grid-2">
+            <div class="field">
+              <label>Your Name</label>
+              <input required placeholder="Your name">
+            </div>
+            <div class="field">
+              <label>Email</label>
+              <input required type="email" placeholder="you@example.com">
+            </div>
+          </div>
+          <div class="field">
+            <label>Topic Request</label>
+            <textarea placeholder="Example: JLPT preparation plan, SOP samples, interview questions..."></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">Send Request</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+{% endblock  %}

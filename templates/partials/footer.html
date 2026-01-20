@@ -1,0 +1,65 @@
+{% load static %}
+<footer class="footer">
+
+  <div class="container top">
+    <div class="cols">
+
+      <!-- Company -->
+      <div>
+        <h3>{{ site.company_name }}</h3>
+        <p>
+          {{ site.tagline|default:"Your trusted partner for education & counseling." }}
+        </p>
+
+        <div class="mini" style="margin-top:14px">
+          {% if site.phone %}
+            <a href="tel:{{ site.phone }}">📞 {{ site.phone }} <span class="arrow">→</span></a>
+          {% endif %}
+          {% if site.email %}
+            <a href="mailto:{{ site.email }}">✉️ {{ site.email }} <span class="arrow">→</span></a>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3>Quick Links</h3>
+        <div class="mini">
+          <a href="{% url 'about' %}">About Us <span class="arrow">→</span></a>
+          <a href="{% url 'services' %}">Services <span class="arrow">→</span></a>
+          <a href="{% url 'gallery' %}">Gallery <span class="arrow">→</span></a>
+        </div>
+      </div>
+
+      <!-- Destinations -->
+      <div>
+        <h3>Destinations</h3>
+        <div class="mini">
+          <a href="{% url 'services' %}">Japan <span class="arrow">→</span></a>
+          <a href="{% url 'services' %}">UK <span class="arrow">→</span></a>
+          <a href="{% url 'services' %}">Australia <span class="arrow">→</span></a>
+        </div>
+      </div>
+
+      <!-- Office -->
+      <div>
+        <h3>Office</h3>
+        <p>{{ site.address }}</p>
+
+        <div class="social" style="margin-top:12px">
+          {% if site.facebook %}<a href="{{ site.facebook }}" aria-label="Facebook">f</a>{% endif %}
+          {% if site.instagram %}<a href="{{ site.instagram }}" aria-label="Instagram">ig</a>{% endif %}
+          {% if site.youtube %}<a href="{{ site.youtube }}" aria-label="YouTube">yt</a>{% endif %}
+          {% if site.linkedin %}<a href="{{ site.linkedin }}" aria-label="LinkedIn">in</a>{% endif %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container bottom">
+    <span>© <span id="year"></span> {{ site.company_name }}. All rights reserved.</span>
+    <span>Made with ❤ using Django</span>
+  </div>
+
+</footer>

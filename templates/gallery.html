@@ -1,0 +1,161 @@
+
+{% extends "base.html" %}
+
+{% block title %} Gallery | Fine Diamond {% endblock  %}
+
+
+{% block content %}
+
+  <section class="pagehead">
+    <div class="container">
+      <div class="breadcrumb">Home / Gallary</div>
+      <h1>Gallary & Events</h1>
+    </div>
+  </section>
+
+  <!-- ===== Events Calendar (Design Only / Django-ready) ===== -->
+<section class="section">
+  <div class="container">
+    <div class="card" id="eventsCalendar">
+      <div class="section-title" style="margin-bottom:10px">
+        <h2>Events Calendar</h2>
+        <p>Upcoming seminars, workshops, orientations & celebrations.</p>
+      </div>
+
+      <div class="cal-head">
+        <button class="iconbtn cal-prev" type="button" aria-label="Previous month">←</button>
+        <div>
+          <div class="cal-month" id="calMonth">Month 2026</div>
+          <div class="cal-sub" id="calSub">Select a date to see events</div>
+        </div>
+        <button class="iconbtn cal-next" type="button" aria-label="Next month">→</button>
+      </div>
+
+      <div class="cal-weekdays">
+        <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+      </div>
+
+      <div class="cal-grid" id="calGrid"></div>
+
+      <div class="cal-panel">
+        <div class="card" style="box-shadow:none;border:1px solid rgba(15,23,42,.10);">
+          <h3 style="margin-top:0">Events on <span id="calSelectedDate">—</span></h3>
+          <div id="calEventsList" class="cal-events"></div>
+        </div>
+
+        <div class="card" style="box-shadow:none;border:1px solid rgba(15,23,42,.10);">
+          <h3 style="margin-top:0">Event Request (UI)</h3>
+          <form class="form" id="eventForm">
+            <div class="field">
+              <label>Event Title</label>
+              <input required name="title" placeholder="e.g., IELTS Seminar"/>
+            </div>
+
+            <div class="grid grid-2">
+              <div class="field">
+                <label>Time</label>
+                <input name="time" placeholder="e.g., 2:00 PM"/>
+              </div>
+              <div class="field">
+                <label>Category</label>
+                <select name="category">
+                  <option>Seminar</option>
+                  <option>Workshop</option>
+                  <option>Orientation</option>
+                  <option>Celebration</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label>Location</label>
+              <input name="location" placeholder="Kathmandu Office / Online"/>
+            </div>
+
+            <div class="field">
+              <label>Details</label>
+              <textarea name="details" placeholder="Short description..."></textarea>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Submit (UI Only)</button>
+          </form>
+
+          <p class="small">Later: connect this form to Django (save events in database).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Photo Memories</h2>
+        <p>Click any photo to open the lightbox. Use arrows on keyboard too.</p>
+      </div>
+
+      <div class="filters">
+        <button class="chip active" data-filter="all">All</button>
+        <button class="chip" data-filter="seminar">Seminars</button>
+        <button class="chip" data-filter="orientation">Orientations</button>
+        <button class="chip" data-filter="celebration">Celebrations</button>
+        <button class="chip" data-filter="workshop">Workshops</button>
+      </div>
+
+      <div class="gallery-grid">
+        <!-- Replace images with your own in assets/images -->
+        <div class="thumb" data-category="seminar" data-caption="Seminar: Study in Japan">
+          <img src="img/seminar.jpg" alt="Seminar photo">
+          <span>Seminar</span>
+        </div>
+        <div class="thumb" data-category="orientation" data-caption="Orientation: UK Application Guidance">
+          <img src="img/orientation.jpg" alt="Orientation photo">
+          <span>Orientation</span>
+        </div>
+        <div class="thumb" data-category="celebration" data-caption="Student Success Celebration">
+          <img src="img/celebration.jpg" alt="Celebration photo">
+          <span>Celebration</span>
+        </div>
+        <div class="thumb" data-category="workshop" data-caption="Workshop: IELTS Preparation">
+          <img src="assets/images/event-4.jpg" alt="Workshop photo">
+          <span>Workshop</span>
+        </div>
+
+        <div class="thumb" data-category="seminar" data-caption="Seminar: Australia Intake Planning">
+          <img src="assets/images/event-5.jpg" alt="Seminar photo">
+          <span>Seminar</span>
+        </div>
+        <div class="thumb" data-category="orientation" data-caption="Orientation: Document Checklist Session">
+          <img src="assets/images/event-6.jpg" alt="Orientation photo">
+          <span>Orientation</span>
+        </div>
+        <div class="thumb" data-category="celebration" data-caption="Visa Success Moment">
+          <img src="assets/images/event-7.jpg" alt="Success photo">
+          <span>Celebration</span>
+        </div>
+        <div class="thumb" data-category="workshop" data-caption="Workshop: SOP & Interview Tips">
+          <img src="assets/images/event-8.jpg" alt="Workshop photo">
+          <span>Workshop</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-inner">
+      <img class="lightbox-img" id="lightboxImg" alt="Lightbox image"/>
+      <div class="lb-caption">
+        <span id="lightboxCaption">Caption</span>
+        <div class="lb-actions">
+          <button class="lb-btn" id="lbPrev" aria-label="Previous">←</button>
+          <button class="lb-btn" id="lbNext" aria-label="Next">→</button>
+          <button class="lb-btn" id="lbClose" aria-label="Close">✕</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock  %}

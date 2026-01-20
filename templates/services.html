@@ -1,0 +1,79 @@
+
+{% extends "base.html" %}
+
+{% block title %} Services | Fine Diamond {% endblock  %}
+
+{% block content %}
+
+  <section class="pagehead">
+    <div class="container">
+      <div class="breadcrumb">Home / Services</div>
+      <h1>Our Services</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Choose a Service</h2>
+        <p>Click a service card to open a quick inquiry form.</p>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="card service-card" data-modal="language" role="button" tabindex="0">
+          <div class="badge">🗣️</div>
+          <h3>Language Test & Classes</h3>
+          <p>IELTS, PTE, TOEFL and language learning support with practical strategy.</p>
+          <p class="small"><strong>Click to open form</strong></p>
+        </div>
+
+        <div class="card service-card" data-modal="counseling" role="button" tabindex="0">
+          <div class="badge">🌍</div>
+          <h3>Study Abroad Counseling</h3>
+          <p>Country selection, course guidance, scholarship direction, and planning.</p>
+          <p class="small"><strong>Click to open form</strong></p>
+        </div>
+
+        <div class="card service-card" data-modal="generic" role="button" tabindex="0">
+          <div class="badge">🧾</div>
+          <h3>Documentation Support</h3>
+          <p>SOP/GTE guidance, checklists, interview prep, and document review.</p>
+          <p class="small"><strong>Click to open form</strong></p>
+        </div>
+
+        <div class="card service-card" data-modal="generic" role="button" tabindex="0">
+          <div class="badge">🎓</div>
+          <h3>Admissions Assistance</h3>
+          <p>Application planning, university/college selection, and submission support.</p>
+          <p class="small"><strong>Click to open form</strong></p>
+        </div>
+
+        <div class="card service-card" data-modal="generic" role="button" tabindex="0">
+          <div class="badge">📌</div>
+          <h3>Interview Preparation</h3>
+          <p>Mock interviews, common questions, confidence building, and guidance.</p>
+          <p class="small"><strong>Click to open form</strong></p>
+        </div>
+
+        <div class="card service-card" data-modal="generic" role="button" tabindex="0">
+          <div class="badge">🤝</div>
+          <h3>Student Support</h3>
+          <p>Follow-ups, orientation sessions, and ongoing assistance during the process.</p>
+          <p class="small"><strong>Click to open form</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal (reused) -->
+  <div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <div class="modal-head">
+        <strong id="modalTitle">Service Inquiry</strong>
+        <button class="close modalClose" aria-label="Close">✕</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+{% endblock  %}

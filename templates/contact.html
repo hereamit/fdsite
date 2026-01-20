@@ -1,0 +1,100 @@
+
+{% extends "base.html" %}
+
+{% block title %} Contact | Fine Diamond {% endblock  %}
+
+{% block content %}
+
+  <section class="pagehead">
+    <div class="container">
+      <div class="breadcrumb">Home / Contact</div>
+      <h1>Contact Us</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Contact Information</h3>
+          <p><strong>Phone:</strong> +977-1-5911111</p>
+          <p><strong>Email:</strong> info@finediamond.edu.np</p>
+          <p><strong>Address:</strong> Dharma Chakra Galli, Badhbazar, Kathmandu, Nepal</p>
+
+          <div style="height:14px"></div>
+          <div class="quote">
+            <strong>Office Hours (suggested)</strong>
+            <p style="margin:8px 0 0;color:#334155;font-weight:700">
+              Sun–Fri: 9:00 AM – 6:00 PM <br/> Sat: By Appointment
+            </p>
+          </div>
+
+          <div style="height:14px"></div>
+          <div class="social">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="Instagram">ig</a>
+            <a href="#" aria-label="YouTube">yt</a>
+            <a href="#" aria-label="LinkedIn">in</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Send Us a Message</h3>
+          <form class="form" onsubmit="event.preventDefault(); alert('✅ Message sent! (Front-end demo)');">
+            <div class="grid grid-2">
+              <div class="field">
+                <label>Full Name</label>
+                <input required placeholder="Your full name"/>
+              </div>
+              <div class="field">
+                <label>Phone</label>
+                <input required placeholder="+977-98XXXXXXXX"/>
+              </div>
+            </div>
+
+            <div class="field">
+              <label>Email</label>
+              <input required type="email" placeholder="you@example.com"/>
+            </div>
+
+            <div class="field">
+              <label>Interested In</label>
+              <select>
+                <option>Study Abroad Counseling</option>
+                <option>IELTS / PTE / TOEFL</option>
+                <option>Japanese / Other Language Classes</option>
+                <option>Documentation Support</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label>Message</label>
+              <textarea placeholder="Write your message..."></textarea>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+
+      <div style="height:18px"></div>
+
+      <div class="card">
+        <div class="section-title">
+          <h2>Find Us on Map</h2>
+          <p>Google map embed (replace with your exact pinned map link if needed).</p>
+        </div>
+        <div class="map">
+          <iframe
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Dharma%20Chakra%20Galli%20Badhbazar%20Kathmandu%20Nepal&output=embed">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+{% endblock  %}
