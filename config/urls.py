@@ -18,6 +18,12 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib import admin
+
+admin.site.site_header = "Welcome to Fine Diamond Dashboard"
+admin.site.site_title = "Fine Diamond Admin"
+admin.site.index_title = "Fine Diamond Administration"
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
