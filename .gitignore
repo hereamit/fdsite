@@ -63,3 +63,7 @@ yarn-error.log
 .env.local
 .env.*.local
 *.pem
+# Server / cPanel
+passenger_wsgi.py
+staticfiles/
+tmp/
