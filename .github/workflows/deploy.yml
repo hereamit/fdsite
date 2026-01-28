@@ -1,40 +1,15 @@
-name: Deploy Django to cPanel
+script: |
+  cd /home/malandev/finediamond_app/app
 
-on:
-  push:
-    branches: ["main"]
+  git pull origin main
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
+  source /home/malandev/virtualenv/finediamond_app/3.12/bin/activate
 
-    steps:
-      - name: SSH and Deploy
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.CPANEL_HOST }}
-          username: ${{ secrets.CPANEL_USER }}
-          key: ${{ secrets.CPANEL_SSH_KEY }}
-          script: |
-            # 1. Enter the app folder
-            cd ~/finediamond_app
-            
-            # 2. Pull the latest code from GitHub
-            git pull origin main
-            
-            # 3. Activate the Virtual Environment
-            source ~/virtualenv/finediamond_app/3.12/bin/activate
-            
-            # 4. Install dependencies
-            pip install -r requirements.txt
-            
-            # 5. Run Database Migrations
-            python manage.py migrate
-            
-            # 6. Collect Static Files
-            python manage.py collectstatic --noinput
-            
-            # 7. Restart the App (cPanel looks for this file change)
-            mkdir -p tmp
-            touch tmp/restart.txt
-            echo "🚀 Deployment Successful!"
+  pip install -r requirements.txt
+
+  python manage.py migrate --noinput
+
+  python manage.py collectstatic --noinput
+
+  touch /home/malandev/finediamond_app/tmp/restart.txt
+  echo "🚀 Deployment Successful!"
