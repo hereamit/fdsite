@@ -25,8 +25,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-7(r+ajqs7vdu%lcs4qtoj)$g$z5c8rs_$xy0ib(1^1=9c(+-h0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# DEBUG = True
 DEBUG = False
-ALLOWED_HOSTS = ['finediamond.edu.np', 'www.finediamond.edu.np']
+ALLOWED_HOSTS = ['finediamond.edu.np', 'www.finediamond.edu.np',]
+
+# ALLOWED_HOSTS = []
 
 
 # Application definition
